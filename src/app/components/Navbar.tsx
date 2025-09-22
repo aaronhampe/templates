@@ -18,49 +18,34 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <span className={`text-xl font-semibold transition-colors duration-300 ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
-              MedCare Clinic
+            <span className={`text-lg font-light tracking-widest transition-colors duration-300 ${isScrolled ? 'text-slate-800' : 'text-white/80'}`}>
+              MEDCARE
             </span>
           </div>
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <a href="#about" className={`font-light hover:font-normal transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-blue-800' : 'text-white/90 hover:text-white'}`}>
-              Über uns
+          {/* Ultra-minimal Desktop Menu */}
+          <div className="hidden md:flex space-x-12">
+            <a href="#about" className={`text-xs font-light tracking-widest uppercase transition-all duration-300 ${isScrolled ? 'text-slate-600 hover:text-slate-800' : 'text-white/60 hover:text-white/90'}`}>
+              Praxis
             </a>
-            <a href="#doctors" className={`font-light hover:font-normal transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-blue-800' : 'text-white/90 hover:text-white'}`}>
-              Ärzteteam
-            </a>
-            <a href="#services" className={`font-light hover:font-normal transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-blue-800' : 'text-white/90 hover:text-white'}`}>
-              Leistungen
-            </a>
-            <a href="#contact" className={`font-light hover:font-normal transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-blue-800' : 'text-white/90 hover:text-white'}`}>
+            <a href="#contact" className={`text-xs font-light tracking-widest uppercase transition-all duration-300 ${isScrolled ? 'text-slate-600 hover:text-slate-800' : 'text-white/60 hover:text-white/90'}`}>
               Kontakt
             </a>
           </div>
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-700 focus:outline-none">
-              {mobileMenuOpen ? <XIcon size={24} /> : <MenuIcon size={24} />}
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`focus:outline-none transition-colors duration-300 ${isScrolled ? 'text-slate-700' : 'text-white/70'}`}>
+              {mobileMenuOpen ? <XIcon size={20} /> : <MenuIcon size={20} />}
             </button>
           </div>
         </div>
-        {/* Mobile Menu */}
-        {mobileMenuOpen && <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-3">
-              <a href="#about" className="text-gray-700 hover:text-blue-800 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                About
+        {/* Minimal Mobile Menu */}
+        {mobileMenuOpen && <div className="md:hidden mt-6 pb-6">
+            <div className="flex flex-col space-y-4">
+              <a href="#about" className={`text-xs font-light tracking-widest uppercase transition-colors ${isScrolled ? 'text-slate-600' : 'text-white/70'}`} onClick={() => setMobileMenuOpen(false)}>
+                Praxis
               </a>
-              <a href="#doctors" className="text-gray-700 hover:text-blue-800 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Our Doctors
-              </a>
-              <a href="#services" className="text-gray-700 hover:text-blue-800 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Services
-              </a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-800 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Testimonials
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-800 transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                Contact
+              <a href="#contact" className={`text-xs font-light tracking-widest uppercase transition-colors ${isScrolled ? 'text-slate-600' : 'text-white/70'}`} onClick={() => setMobileMenuOpen(false)}>
+                Kontakt
               </a>
             </div>
           </div>}
