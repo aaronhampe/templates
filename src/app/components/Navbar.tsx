@@ -5,6 +5,8 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(true);
+  const [locationDropdownOpen, setLocationDropdownOpen] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState('Langenhagen');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,15 +49,65 @@ export function Navbar() {
             
             {/* Left Side - Location & Logo */}
             <div className="flex items-center space-x-6">
-              {/* Location Indicator */}
-              <div className={`hidden md:flex items-center transition-colors duration-500 ${
-                isDarkBackground 
-                  ? 'text-white/80 hover:text-white' 
-                  : 'text-slate-700/80 hover:text-slate-900'
-              }`}>
-                <MapPinIcon size={16} className="mr-2" />
-                <span className="font-light text-sm mr-1">Berlin</span>
-                <ChevronDownIcon size={14} />
+              {/* Location Selector */}
+              <div className="hidden md:relative md:inline-block">
+                <button
+                  onClick={() => setLocationDropdownOpen(!locationDropdownOpen)}
+                  className={`flex items-center transition-colors duration-500 hover:scale-105 ${
+                    isDarkBackground 
+                      ? 'text-white/80 hover:text-white' 
+                      : 'text-slate-700/80 hover:text-slate-900'
+                  }`}
+                >
+                  <MapPinIcon size={16} className="mr-2" />
+                  <span className="font-light text-sm mr-1">{selectedLocation}</span>
+                  <ChevronDownIcon 
+                    size={14} 
+                    className={`transition-transform duration-300 ${
+                      locationDropdownOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+
+                {/* Glassmorphism Dropdown */}
+                {locationDropdownOpen && (
+                  <>
+                    {/* Backdrop */}
+                    <div 
+                      className="fixed inset-0 z-10" 
+                      onClick={() => setLocationDropdownOpen(false)}
+                    />
+                    
+                    {/* Dropdown Menu */}
+                    <div className={`
+                      absolute top-full left-0 mt-2 py-2 min-w-[140px] rounded-xl backdrop-blur-xl border shadow-2xl z-20
+                      transition-all duration-300 origin-top
+                      ${isDarkBackground
+                        ? 'bg-white/[0.15] border-white/[0.2] shadow-black/20'
+                        : 'bg-black/[0.1] border-black/[0.15] shadow-white/30'
+                      }
+                    `}>
+                      <LocationOption 
+                        location="Langenhagen" 
+                        isSelected={selectedLocation === 'Langenhagen'}
+                        isDark={isDarkBackground}
+                        onClick={() => {
+                          setSelectedLocation('Langenhagen');
+                          setLocationDropdownOpen(false);
+                        }}
+                      />
+                      <LocationOption 
+                        location="Garbsen" 
+                        isSelected={selectedLocation === 'Garbsen'}
+                        isDark={isDarkBackground}
+                        onClick={() => {
+                          setSelectedLocation('Garbsen');
+                          setLocationDropdownOpen(false);
+                        }}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
               
               {/* Logo/Brand */}
@@ -67,15 +119,15 @@ export function Navbar() {
                 }`}>
                   <span className={`font-semibold text-lg transition-colors duration-500 ${
                     isDarkBackground ? 'text-white' : 'text-slate-800'
-                  }`}>M</span>
+                  }`}>C</span>
                 </div>
                 <div className={`leading-tight transition-colors duration-500 ${
                   isDarkBackground ? 'text-white/90' : 'text-slate-800/90'
                 }`}>
-                  <div className="text-sm font-medium tracking-wide">MEDCARE</div>
+                  <div className="text-sm font-medium tracking-wide">Chirurgische & Orthopädische</div>
                   <div className={`text-xs font-light transition-opacity duration-500 ${
                     isDarkBackground ? 'opacity-80' : 'opacity-70'
-                  }`}>Clinic</div>
+                  }`}>Gemeinschaftspraxis</div>
                 </div>
               </div>
             </div>
@@ -182,5 +234,40 @@ const MobileNavItem = ({ label, href, onClick, isDark }: { label: string; href: 
       <span className="font-light">{label}</span>
       <ChevronDownIcon size={16} className="opacity-60" />
     </a>
+  );
+};
+
+// Location Dropdown Option Component
+const LocationOption = ({ 
+  location, 
+  isSelected, 
+  isDark, 
+  onClick 
+}: { 
+  location: string; 
+  isSelected: boolean; 
+  isDark: boolean; 
+  onClick: () => void; 
+}) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        w-full px-4 py-2 text-left text-sm font-light transition-all duration-300
+        flex items-center justify-between group
+        ${isDark
+          ? 'text-white/80 hover:text-white hover:bg-white/[0.1]'
+          : 'text-slate-700/80 hover:text-slate-900 hover:bg-black/[0.08]'
+        }
+        ${isSelected ? 'font-medium' : ''}
+      `}
+    >
+      <span>{location}</span>
+      {isSelected && (
+        <div className={`w-2 h-2 rounded-full ${
+          isDark ? 'bg-white/60' : 'bg-slate-600/60'
+        }`} />
+      )}
+    </button>
   );
 };

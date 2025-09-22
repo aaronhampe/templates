@@ -61,16 +61,33 @@ export function HeroSection() {
       <div className="container mx-auto px-8 md:px-16 relative z-10">
         <div className="max-w-6xl mx-auto">
           
-          {/* Left-aligned Premium Content */}
-          <div className="text-center md:text-left md:max-w-2xl">
+          {/* Left-aligned Premium Content with subtle background */}
+          <div className="text-center md:text-left md:max-w-2xl relative">
+            {/* Subtle glassmorphism backdrop for text readability */}
+            <div className="absolute inset-0 -m-8 rounded-3xl backdrop-blur-md bg-black/[0.15] border border-white/[0.08] shadow-2xl shadow-black/20 opacity-80"></div>
             
-            {/* Subtle Premium Headline */}
+            {/* Content container */}
+            <div className="relative z-10 p-8">
+            
+              {/* Apple-Style Creative Headline - VERSION 1: Sophisticated Hierarchy */}
             <div className={`transform transition-all duration-1200 delay-500 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-12 leading-relaxed tracking-wide">
-                Medizinische Exzellenz
+              <div className="mb-4">
+                <span className="text-white/60 text-sm font-light tracking-[0.2em] uppercase">
+                  Ihre Gesundheit
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extralight text-white mb-3 leading-[0.9] tracking-tight">
+                in den besten
+                <br />
+                <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-blue-200">
+                  Händen
+                </span>
               </h1>
+              <div className="text-white/70 text-lg md:text-xl font-light tracking-wide mb-12">
+                Modernste Medizin trifft persönliche Betreuung
+              </div>
             </div>
 
             {/* Apple-style Glassmorphism Trust Card */}
@@ -85,7 +102,7 @@ export function HeroSection() {
                 <div className="w-px h-4 bg-white/20"></div>
                 <div className="hidden md:flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg shadow-blue-400/50"></div>
-                  <span className="text-white/80 text-sm font-light">Privatpraxis</span>
+                  <span className="text-white/80 text-sm font-light">Gemeinschaftspraxis</span>
                 </div>
               </div>
             </div>
@@ -96,19 +113,30 @@ export function HeroSection() {
             }`}>
               <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 
-                {/* Primary Glassmorphism Button */}
-                <a 
-                  href="#contact" 
-                  className="group relative overflow-hidden px-8 py-4 rounded-full backdrop-blur-xl bg-white/[0.15] hover:bg-white/[0.25] border border-white/[0.2] hover:border-white/[0.3] transition-all duration-500 shadow-2xl shadow-black/20 hover:shadow-black/30 hover:scale-[1.02]"
-                >
-                  <div className="flex items-center space-x-3 text-white/90 hover:text-white text-sm font-medium tracking-wide">
-                    <span>Termin vereinbaren</span>
-                    <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Apple-style shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                </a>
+                {/* Apple-Style Magnetic CTA */}
+                <div className="group relative">
+                  <a 
+                    href="#contact" 
+                    className="relative inline-flex items-center space-x-4 px-8 py-4 rounded-2xl backdrop-blur-2xl bg-white/[0.12] hover:bg-white/[0.2] border border-white/[0.15] hover:border-white/[0.3] transition-all duration-700 shadow-2xl hover:shadow-white/10 hover:scale-105 hover:-translate-y-1"
+                  >
+                    {/* Magnetic dot */}
+                    <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full shadow-lg shadow-emerald-400/50 group-hover:shadow-emerald-400/80 group-hover:scale-110 transition-all duration-500"></div>
+                    
+                    <div className="flex flex-col">
+                      <span className="text-white/90 text-sm font-medium tracking-wide">
+                        Jetzt Termin
+                      </span>
+                      <span className="text-white/60 text-xs font-light -mt-1">
+                        Heute verfügbar
+                      </span>
+                    </div>
+                    
+                    <ArrowRightIcon size={18} className="text-white/70 group-hover:text-white group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500" />
+                    
+                    {/* Orbital glow effect */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400/10 via-blue-400/10 to-emerald-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-xl"></div>
+                  </a>
+                </div>
                 
                 {/* Secondary Glassmorphism Phone Button */}
                 <a 
@@ -121,7 +149,8 @@ export function HeroSection() {
               </div>
             </div>
 
-          </div>
+            </div> {/* Close content container */}
+          </div> {/* Close text container */}
         </div>
       </div>
 
