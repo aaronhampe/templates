@@ -19,7 +19,7 @@ export function Navbar() {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <span className={`text-lg font-light tracking-widest transition-colors duration-300 ${isScrolled ? 'text-slate-800' : 'text-white/80'}`}>
-              MEDCARE
+              Chirurgische & Orthopädische Gemeinschaftspraxis
             </span>
           </div>
           {/* Ultra-minimal Desktop Menu */}
