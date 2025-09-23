@@ -121,67 +121,89 @@ export function HeroSection() {
               </div> {/* Close content container */}
             </div> {/* Close text container */}
             
-            {/* Right: Apple-Style Video Card */}
+            {/* Right: Cinema Display - Großes Immersives Video */}
             <div className="relative order-1 lg:order-2">
               <div className={`transform transition-all duration-1500 delay-300 ${
                 isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
               }`}>
                 
-                {/* Video Container with Apple Glassmorphism */}
+                {/* Cinema Video Container - Like Apple Studio Display */}
                 <div className="relative group">
-                  {/* Main Video Card */}
-                  <div className="relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-white/[0.08] border border-white/[0.12] shadow-2xl shadow-black/30 hover:shadow-black/40 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2">
+                  {/* Massive Video Card mit Apple Pro Display Proportionen */}
+                  <div className="relative rounded-[2rem] overflow-hidden backdrop-blur-3xl bg-black/[0.15] border border-white/[0.08] shadow-[0_0_80px_rgba(0,0,0,0.6)] hover:shadow-[0_0_120px_rgba(0,0,0,0.8)] transition-all duration-1000 hover:scale-[1.01] hover:-translate-y-1">
                     
-                    {/* Video Element */}
-                    <div className="aspect-video relative overflow-hidden">
+                    {/* Video Element - Cinema Größe */}
+                    <div className="aspect-[4/3] lg:aspect-[16/10] relative overflow-hidden h-[400px] lg:h-[500px]">
                       <video 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102" 
                         autoPlay 
                         loop 
                         muted 
                         playsInline 
-                        aria-label="Einblick in die Praxis Hampe & Kuhn"
+                        aria-label="Immersiver Einblick in die Praxis Hampe & Kuhn"
                       >
                         <source src="praxis-platzhalter_komp.mp4" type="video/mp4" />
-                        <div className="w-full h-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
-                          <span className="text-white/80 text-sm">Video wird geladen...</span>
+                        <div className="w-full h-full bg-gradient-to-br from-blue-600 via-blue-500 to-emerald-500 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+                            <span className="text-white/90 text-lg font-light">Praxis Video lädt...</span>
+                          </div>
                         </div>
                       </video>
                       
-                      {/* Subtle overlay for depth */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60"></div>
+                      {/* Cinematic Vignette */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
                     </div>
                     
-                    {/* Apple-Style Video Caption */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/40 to-transparent">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
-                        <span className="text-white/90 text-sm font-light">
-                          Live aus unserer Praxis
-                        </span>
+                    {/* Cinema-Style UI Overlay */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      {/* Top Bar */}
+                      <div className="absolute top-0 left-0 right-0 p-8">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
+                            <span className="text-white/90 text-lg font-light">
+                              Live Stream
+                            </span>
+                          </div>
+                          <div className="px-4 py-2 rounded-full backdrop-blur-xl bg-black/30 border border-white/20 text-white/80 text-sm font-light">
+                            4K HDR
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Bottom Cinema Info */}
+                      <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                        <div className="space-y-4">
+                          <h3 className="text-white text-2xl font-light">
+                            Praxis Hampe & Kuhn
+                          </h3>
+                          <div className="flex items-center space-x-6">
+                            <div className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                              <span className="text-white/80 text-sm">Modernste Ausstattung</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                              <span className="text-white/80 text-sm">Persönliche Betreuung</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                              <span className="text-white/80 text-sm">Zwei Standorte</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Apple-Style Floating Elements */}
-                  <div className={`absolute -top-4 -right-4 transform transition-all duration-1000 delay-800 ${
-                    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  }`}>
-                    <div className="px-4 py-2 rounded-full backdrop-blur-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-light shadow-lg shadow-emerald-500/20">
-                      Modernste Ausstattung
-                    </div>
-                  </div>
+                  {/* Pro Display Stand Effekt */}
+                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-32 h-4 bg-gradient-to-r from-transparent via-white/[0.06] to-transparent rounded-full blur-sm"></div>
+                  <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-24 h-8 bg-gradient-to-r from-transparent via-gray-400/[0.08] to-transparent rounded-full blur-lg"></div>
                   
-                  <div className={`absolute -bottom-4 -left-4 transform transition-all duration-1000 delay-1000 ${
-                    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  }`}>
-                    <div className="px-4 py-2 rounded-full backdrop-blur-xl bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-light shadow-lg shadow-blue-500/20">
-                      Persönliche Betreuung
-                    </div>
-                  </div>
-                  
-                  {/* Ambient glow effect */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-2xl scale-110"></div>
+                  {/* Cinema Ambient Lighting */}
+                  <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-r from-blue-500/5 via-emerald-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10 blur-3xl scale-125"></div>
                 </div>
                 
               </div>
