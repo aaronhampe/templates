@@ -11,63 +11,32 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden" role="banner" aria-label="Hauptbereich der Website">
-      {/* Video Background with Fallback */}
-      <div className="absolute inset-0 w-full h-full">
-        {/* Fallback Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-[10s] hover:scale-100"
-          style={{
-            backgroundImage: `url('data:image/svg+xml;base64,${btoa(`
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
-                <defs>
-                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.9" />
-                    <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <rect width="1920" height="1080" fill="url(#grad1)"/>
-                <circle cx="1400" cy="300" r="200" fill="white" opacity="0.1"/>
-                <circle cx="500" cy="700" r="150" fill="white" opacity="0.08"/>
-                <rect x="200" y="200" width="300" height="2" fill="white" opacity="0.2"/>
-                <rect x="1200" y="800" width="400" height="2" fill="white" opacity="0.15"/>
-              </svg>
-            `)}`
-          }}
-        />
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800" role="banner" aria-label="Hauptbereich der Website">
+      
+      {/* Apple-Style: Subtle Animated Gradient Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-800 animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/10 to-emerald-500/10 animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }}></div>
         
-        {/* Video (will overlay the background image when loaded) */}
-        <video 
-          className="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-[10s] hover:scale-100" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkMSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxZTQwYWY7c3RvcC1vcGFjaXR5OjEiIC8+CjxzdG9wIG9mZnNldD0iNTAlIiBzdHlsZT0ic3RvcC1jb2xvcjojM2I4MmY2O3N0b3Atb3BhY2l0eTowLjkiIC8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFlM2E4YTtzdG9wLW9wYWNpdHk6MSIgLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiBmaWxsPSJ1cmwoI2dyYWQxKSIvPgo8Y2lyY2xlIGN4PSIxNDAwIiBjeT0iMzAwIiByPSIyMDAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjEiLz4KPGNpcmNsZSBjeD0iNTAwIiBjeT0iNzAwIiByPSIxNTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjA4Ii8+CjxyZWN0IHg9IjIwMCIgeT0iMjAwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KPHJlY3QgeD0iMTIwMCIgeT0iODAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjE1Ii8+Cjwvc3ZnPgo="
-          aria-label="Hintergrundvideo der Praxis"
-        >
-          <source src="praxis-platzhalter_komp.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        
-        {/* Subtle gray overlay for enhanced text contrast */}
-        <div className="absolute inset-0 bg-gray-900/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-gray-800/15 to-black/25"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent"></div>
+        {/* Subtle geometric patterns - Apple loves clean geometry */}
+        <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
+        <div className="absolute bottom-32 left-16 w-96 h-96 bg-gradient-to-tr from-emerald-400/15 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '3s' }}></div>
       </div>
 
       {/* Ultra-Minimal Premium Container */}
       <div className="container mx-auto px-8 md:px-16 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           
-          {/* Left-aligned Premium Content with subtle background */}
-          <div className="text-center md:text-left md:max-w-2xl relative">
-            {/* Subtle glassmorphism backdrop for text readability */}
-            <div className="absolute inset-0 -m-8 rounded-3xl backdrop-blur-md bg-black/[0.15] border border-white/[0.08] shadow-2xl shadow-black/20 opacity-80"></div>
+          {/* Apple-Style Split Layout: Content + Video */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[80vh]">
             
-            {/* Content container */}
-            <div className="relative z-10 p-8">
+            {/* Left: Premium Content */}
+            <div className="text-center lg:text-left relative order-2 lg:order-1">
+              {/* Subtle glassmorphism backdrop for text readability */}
+              <div className="absolute inset-0 -m-8 rounded-3xl backdrop-blur-md bg-black/[0.15] border border-white/[0.08] shadow-2xl shadow-black/20 opacity-80"></div>
+              
+              {/* Content container */}
+              <div className="relative z-10 p-8">
             
               {/* Apple-Style Creative Headline - VERSION 1: Sophisticated Hierarchy */}
             <div className={`transform transition-all duration-1200 delay-500 ${
@@ -149,8 +118,76 @@ export function HeroSection() {
               </div>
             </div>
 
-            </div> {/* Close content container */}
-          </div> {/* Close text container */}
+              </div> {/* Close content container */}
+            </div> {/* Close text container */}
+            
+            {/* Right: Apple-Style Video Card */}
+            <div className="relative order-1 lg:order-2">
+              <div className={`transform transition-all duration-1500 delay-300 ${
+                isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+              }`}>
+                
+                {/* Video Container with Apple Glassmorphism */}
+                <div className="relative group">
+                  {/* Main Video Card */}
+                  <div className="relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-white/[0.08] border border-white/[0.12] shadow-2xl shadow-black/30 hover:shadow-black/40 transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2">
+                    
+                    {/* Video Element */}
+                    <div className="aspect-video relative overflow-hidden">
+                      <video 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        aria-label="Einblick in die Praxis Hampe & Kuhn"
+                      >
+                        <source src="praxis-platzhalter_komp.mp4" type="video/mp4" />
+                        <div className="w-full h-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center">
+                          <span className="text-white/80 text-sm">Video wird geladen...</span>
+                        </div>
+                      </video>
+                      
+                      {/* Subtle overlay for depth */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60"></div>
+                    </div>
+                    
+                    {/* Apple-Style Video Caption */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 via-black/40 to-transparent">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
+                        <span className="text-white/90 text-sm font-light">
+                          Live aus unserer Praxis
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Apple-Style Floating Elements */}
+                  <div className={`absolute -top-4 -right-4 transform transition-all duration-1000 delay-800 ${
+                    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  }`}>
+                    <div className="px-4 py-2 rounded-full backdrop-blur-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-light shadow-lg shadow-emerald-500/20">
+                      Modernste Ausstattung
+                    </div>
+                  </div>
+                  
+                  <div className={`absolute -bottom-4 -left-4 transform transition-all duration-1000 delay-1000 ${
+                    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  }`}>
+                    <div className="px-4 py-2 rounded-full backdrop-blur-xl bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-light shadow-lg shadow-blue-500/20">
+                      Persönliche Betreuung
+                    </div>
+                  </div>
+                  
+                  {/* Ambient glow effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/10 via-emerald-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-2xl scale-110"></div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div> {/* Close grid container */}
         </div>
       </div>
 
