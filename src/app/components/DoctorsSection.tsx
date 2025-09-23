@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Star, Award, Calendar, Crown, GraduationCap } from 'lucide-react';
+import { Award, Calendar, Crown, GraduationCap } from 'lucide-react';
 
 export default function DoctorsSection() {
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
@@ -25,10 +25,10 @@ export default function DoctorsSection() {
 
   const leadingDoctors = [
     {
-      name: 'Prof. Dr. med. Sarah Müller',
-      specialty: 'Kardiologie',
+      name: 'Dr. med. Carsten Hampe',
+      specialty: 'Viszeralchirurgie',
       specialtyEng: 'Chefärztin für Herz-Kreislauf-Erkrankungen',
-      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_hampe_ohne.jpg',
       bio: 'Über 20 Jahre Erfahrung in der Kardiologie mit Spezialisierung auf interventionelle Kardiologie und Herzschrittmacher-Therapie.',
       experience: '20+ Jahre',
       certifications: ['Chefärztin Kardiologie', 'Interventionelle Kardiologie', 'Notfallmedizin'],
@@ -36,10 +36,10 @@ export default function DoctorsSection() {
       isLeading: true
     },
     {
-      name: 'Prof. Dr. med. Michael Schmidt',
+      name: 'Dr. med. Carsten Kuhn',
       specialty: 'Neurologie',
       specialtyEng: 'Chefarzt für neurologische Erkrankungen',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_kuhn_ohne.jpg',
       bio: 'Führender Spezialist für neurologische Störungen mit Fokus auf Multiple Sklerose und neurodegenerative Erkrankungen.',
       experience: '18+ Jahre',
       certifications: ['Chefarzt für Neurologie', 'MS-Spezialist', 'Elektrophysiologie'],
@@ -47,10 +47,10 @@ export default function DoctorsSection() {
       isLeading: true
     },
     {
-      name: 'Dr. med. Anna Weber',
+      name: 'Kai Jörder',
       specialty: 'Orthopädie',
       specialtyEng: 'Leitende Oberärztin für Orthopädie und Unfallchirurgie',
-      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/kai_joerder_chirurgisch.jpg',
       bio: 'Expertin für minimalinvasive Chirurgie und Sportmedizin mit internationaler Ausbildung und Forschungsschwerpunkt.',
       experience: '15+ Jahre',
       certifications: ['Oberärztin Orthopädie', 'Sportmedizin', 'Arthroskopie'],
@@ -58,10 +58,10 @@ export default function DoctorsSection() {
       isLeading: true
     },
     {
-      name: 'Dr. med. Thomas Hoffmann',
+      name: 'Dr. med. Peter Zorko',
       specialty: 'Innere Medizin',
       specialtyEng: 'Leitender Oberarzt für Innere Medizin',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_zorko_ohne.jpg',
       bio: 'Spezialist für Gastroenterologie und Hepatologie mit über 16 Jahren klinischer Erfahrung.',
       experience: '16+ Jahre',
       certifications: ['Oberarzt Innere Medizin', 'Gastroenterologie', 'Hepatologie'],
@@ -69,10 +69,10 @@ export default function DoctorsSection() {
       isLeading: true
     },
     {
-      name: 'Dr. med. Julia Richter',
+      name: 'Susanne Regge',
       specialty: 'Dermatologie',
       specialtyEng: 'Leitende Oberärztin für Dermatologie',
-      image: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_regge_ohne.jpg',
       bio: 'Expertin für Dermatoonkologie und ästhetische Dermatologie mit Schwerpunkt auf innovativen Therapieverfahren.',
       experience: '14+ Jahre',
       certifications: ['Oberärztin Dermatologie', 'Dermatoonkologie', 'Ästhetische Medizin'],
@@ -80,10 +80,10 @@ export default function DoctorsSection() {
       isLeading: true
     },
     {
-      name: 'Dr. med. Robert Klein',
+      name: 'Mark Wolther',
       specialty: 'Radiologie',
       specialtyEng: 'Leitender Oberarzt für Radiologie',
-      image: 'https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_wolther_ohne.jpg',
       bio: 'Spezialist für interventionelle Radiologie und moderne Bildgebungsverfahren mit Fokus auf minimal-invasive Eingriffe.',
       experience: '17+ Jahre',
       certifications: ['Oberarzt Radiologie', 'Interventionelle Radiologie', 'CT/MRT-Diagnostik'],
@@ -94,10 +94,10 @@ export default function DoctorsSection() {
 
   const employedDoctors = [
     {
-      name: 'Dr. med. Lisa Bauer',
+      name: 'Dr. med. Uwe Triechelt',
       specialty: 'Allgemeinmedizin',
       specialtyEng: 'Fachärztin für Allgemeinmedizin',
-      image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_triechelt_ohne.jpg',
       bio: 'Hausärztliche Versorgung mit Schwerpunkt auf Präventivmedizin und ganzheitliche Patientenbetreuung.',
       experience: '8+ Jahre',
       certifications: ['Facharzt Allgemeinmedizin', 'Präventivmedizin', 'Palliativmedizin'],
@@ -105,10 +105,10 @@ export default function DoctorsSection() {
       isLeading: false
     },
     {
-      name: 'Dr. med. Marco Rossi',
+      name: 'Dr. med. Peter Wittich',
       specialty: 'Anästhesiologie',
       specialtyEng: 'Facharzt für Anästhesiologie',
-      image: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_wittich_ohne.jpg',
       bio: 'Spezialist für Narkose und Schmerztherapie mit Erfahrung in der perioperativen Medizin.',
       experience: '10+ Jahre',
       certifications: ['Facharzt Anästhesiologie', 'Schmerztherapie', 'Intensivmedizin'],
@@ -116,10 +116,10 @@ export default function DoctorsSection() {
       isLeading: false
     },
     {
-      name: 'Dr. med. Petra Lange',  
+      name: 'Dr. med. Erhardt Decker',  
       specialty: 'Gynäkologie',
       specialtyEng: 'Fachärztin für Frauenheilkunde',
-      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_decker_ohne.jpg',
       bio: 'Frauenheilkunde und Geburtshilfe mit Schwerpunkt auf pränatale Diagnostik und Krebsvorsorge.',
       experience: '12+ Jahre',
       certifications: ['Facharzt Gynäkologie', 'Geburtshilfe', 'Pränatale Diagnostik'],
@@ -127,10 +127,10 @@ export default function DoctorsSection() {
       isLeading: false
     },
     {
-      name: 'Dr. med. David Zimmermann',
+      name: 'Dr. med. Imke Jöhrens',
       specialty: 'Urologie',
       specialtyEng: 'Facharzt für Urologie',
-      image: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/images/dr_joehrens_ohne.jpg',
       bio: 'Urologische Behandlungen mit Fokus auf minimal-invasive Operationstechniken und Krebstherapie.',
       experience: '9+ Jahre',
       certifications: ['Facharzt Urologie', 'Minimal-invasive Chirurgie', 'Onkologie'],
@@ -315,25 +315,16 @@ const DoctorCard = ({
 
           {/* Content */}
           <div className="p-8">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-medium text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors duration-300">
-                  {doctor.name}
-                </h3>
-                <p className="text-emerald-600 font-light text-sm mb-1">
-                  {doctor.specialty}
-                </p>
-                <p className="text-slate-500 text-xs font-light">
-                  {doctor.specialtyEng}
-                </p>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Star className="w-4 h-4 text-amber-400 fill-current" />
-                <Star className="w-4 h-4 text-amber-400 fill-current" />
-                <Star className="w-4 h-4 text-amber-400 fill-current" />
-                <Star className="w-4 h-4 text-amber-400 fill-current" />
-                <Star className="w-4 h-4 text-amber-400 fill-current" />
-              </div>
+            <div className="mb-4">
+              <h3 className="text-xl font-medium text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors duration-300">
+                {doctor.name}
+              </h3>
+              <p className="text-emerald-600 font-light text-sm mb-1">
+                {doctor.specialty}
+              </p>
+              <p className="text-slate-500 text-xs font-light">
+                {doctor.specialtyEng}
+              </p>
             </div>
 
             <p className="text-slate-600 font-light leading-relaxed mb-6">
