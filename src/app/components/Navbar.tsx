@@ -11,15 +11,13 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
       
       // Consider it scrolled after 20px
       setIsScrolled(scrollY > 20);
       
-      // Dynamic background detection
-      // Hero section (dark) vs other sections (light)
-      const isInHeroSection = scrollY < viewportHeight * 0.8;
-      setIsDarkBackground(isInHeroSection);
+      // For white/light website design - keep navbar consistently dark
+      // This ensures good readability across all white/light sections
+      setIsDarkBackground(false); // Always use dark navbar for light website theme
     };
     
     handleScroll(); // Check initial state
