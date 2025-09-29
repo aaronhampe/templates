@@ -59,95 +59,93 @@ export function HeroSection() {
         <div className="max-w-6xl mx-auto">
           
           {/* Centered Content Layout */}
-          <div className="flex items-center justify-center min-h-[85vh]">
+          <div className="flex items-center justify-start min-h-[85vh]">
             
             {/* Premium Content Container */}
-            <div className="text-center relative max-w-4xl mx-auto">
-              {/* Enhanced glassmorphism backdrop for text readability on video */}
-              <div className="absolute inset-0 -m-12 rounded-[2.5rem] backdrop-blur-2xl bg-white/[0.85] border border-gray-200/50 shadow-[0_0_100px_rgba(0,0,0,0.1)] opacity-95"></div>
+            <div className="text-left relative max-w-xl md:max-w-2xl">
               
-              {/* Content container */}
-              <div className="relative z-10 p-12">
+              {/* Compact glass card around the text */}
+              <div className="relative z-10 p-8 md:p-12 rounded-2xl backdrop-blur-xl bg-white/70 border border-gray-200/60 shadow-lg">
             
-              {/* Apple-Style Creative Headline - VERSION 1: Sophisticated Hierarchy */}
-            <div className={`transform transition-all duration-1200 delay-500 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            }`}>
-              <div className="mb-4">
-                <span className="text-gray-600 text-sm font-light tracking-[0.2em] uppercase">
-                  Ihre Gesundheit
-                </span>
-              </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extralight text-gray-900 mb-3 leading-[0.9] tracking-tight">
-                in den besten
-                <br />
-                <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-gray-900 to-blue-600">
-                  Händen
-                </span>
-              </h1>
-              <div className="text-gray-700 text-lg md:text-xl font-light tracking-wide mb-12">
-                Modernste Medizin trifft persönliche Betreuung
-              </div>
-            </div>
-
-            {/* Apple-style Glassmorphism Trust Card */}
-            <div className={`transform transition-all duration-1200 delay-700 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
-            }`}>
-              <div className="inline-flex items-center space-x-6 mb-8 px-6 py-3 rounded-2xl backdrop-blur-xl bg-gray-50/80 border border-gray-200/50 shadow-lg shadow-black/5">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/30"></div>
-                  <span className="text-gray-700 text-sm font-light">Termine heute</span>
+                {/* Apple-Style Creative Headline - VERSION 1: Sophisticated Hierarchy */}
+                <div className={`transform transition-all duration-1200 delay-500 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}>
+                  <div className="mb-4">
+                    <span className="text-gray-600 text-sm font-light tracking-[0.2em] uppercase">
+                      Ihre Gesundheit
+                    </span>
+                  </div>
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-extralight text-gray-900 mb-3 leading-[0.9] tracking-tight">
+                    in den besten
+                    <br />
+                    <span className="font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-gray-900 to-blue-600">
+                      Händen
+                    </span>
+                  </h1>
+                  <div className="text-gray-700 text-lg md:text-xl font-light tracking-wide mb-12">
+                    Modernste Medizin trifft persönliche Betreuung
+                  </div>
                 </div>
-                <div className="w-px h-4 bg-gray-300"></div>
-                <div className="hidden md:flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/30"></div>
-                  <span className="text-gray-700 text-sm font-light">Gemeinschaftspraxis</span>
-                </div>
-              </div>
-            </div>
 
-            {/* Apple-style Glassmorphism CTA */}
-            <div className={`transform transition-all duration-1200 delay-900 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
-            }`}>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                
-                {/* Apple-Style Magnetic CTA */}
-                <div className="group relative">
-                  <a 
-                    href="#contact" 
-                    className="relative inline-flex items-center space-x-4 px-8 py-4 rounded-2xl backdrop-blur-2xl bg-blue-600 hover:bg-blue-700 border border-blue-600 hover:border-blue-700 transition-all duration-700 shadow-xl hover:shadow-blue-600/20 hover:scale-105 hover:-translate-y-1"
-                  >
-                    {/* Magnetic dot */}
-                    <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-white rounded-full shadow-lg shadow-emerald-400/50 group-hover:shadow-emerald-400/80 group-hover:scale-110 transition-all duration-500"></div>
+                {/* Apple-style Glassmorphism Trust Card */}
+                <div className={`transform transition-all duration-1200 delay-700 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}>
+                  <div className="inline-flex items-center space-x-6 mb-8 px-6 py-3 rounded-2xl backdrop-blur-xl bg-gray-50/80 border border-gray-200/50 shadow-lg shadow-black/5">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/30"></div>
+                      <span className="text-gray-700 text-sm font-light">Termine heute</span>
+                    </div>
+                    <div className="w-px h-4 bg-gray-300"></div>
+                    <div className="hidden md:flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/30"></div>
+                      <span className="text-gray-700 text-sm font-light">Gemeinschaftspraxis</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Apple-style Glassmorphism CTA */}
+                <div className={`transform transition-all duration-1200 delay-900 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+                }`}>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
                     
-                    <div className="flex flex-col">
-                      <span className="text-white text-sm font-medium tracking-wide">
-                        Jetzt Termin
-                      </span>
-                      <span className="text-white/80 text-xs font-light -mt-1">
-                        Heute verfügbar
-                      </span>
+                    {/* Apple-Style Magnetic CTA */}
+                    <div className="group relative">
+                      <a 
+                        href="#contact" 
+                        className="relative inline-flex items-center space-x-4 px-8 py-4 rounded-2xl backdrop-blur-2xl bg-blue-600 hover:bg-blue-700 border border-blue-600 hover:border-blue-700 transition-all duration-700 shadow-xl hover:shadow-blue-600/20 hover:scale-105 hover:-translate-y-1"
+                      >
+                        {/* Magnetic dot */}
+                        <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-white rounded-full shadow-lg shadow-emerald-400/50 group-hover:shadow-emerald-400/80 group-hover:scale-110 transition-all duration-500"></div>
+                        
+                        <div className="flex flex-col">
+                          <span className="text-white text-sm font-medium tracking-wide">
+                            Jetzt Termin
+                          </span>
+                          <span className="text-white/80 text-xs font-light -mt-1">
+                            Heute verfügbar
+                          </span>
+                        </div>
+                        
+                        <ArrowRightIcon size={18} className="text-white/90 group-hover:text-white group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500" />
+                        
+                        {/* Orbital glow effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 via-emerald-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-xl"></div>
+                      </a>
                     </div>
                     
-                    <ArrowRightIcon size={18} className="text-white/90 group-hover:text-white group-hover:translate-x-2 group-hover:scale-110 transition-all duration-500" />
+                    {/* Secondary Phone Button */}
+                    <a 
+                      href="tel:+49301234567" 
+                      className="group px-6 py-3 rounded-full backdrop-blur-lg bg-gray-100/80 hover:bg-gray-200/80 border border-gray-200 hover:border-gray-300 text-gray-700 hover:text-gray-900 text-sm font-light transition-all duration-300 shadow-lg shadow-black/5"
+                    >
+                      030 · 123 45 67
+                    </a>
                     
-                    {/* Orbital glow effect */}
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 via-emerald-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 blur-xl"></div>
-                  </a>
+                  </div>
                 </div>
-                
-                {/* Secondary Phone Button */}
-                <a 
-                  href="tel:+49301234567" 
-                  className="group px-6 py-3 rounded-full backdrop-blur-lg bg-gray-100/80 hover:bg-gray-200/80 border border-gray-200 hover:border-gray-300 text-gray-700 hover:text-gray-900 text-sm font-light transition-all duration-300 shadow-lg shadow-black/5"
-                >
-                  030 · 123 45 67
-                </a>
-                
-              </div>
-            </div>
 
               </div> {/* Close content container */}
             </div> {/* Close text container */}
